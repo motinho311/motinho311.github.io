@@ -11,6 +11,11 @@
 	  	<input type="password"  placeholder="password"/>
  
  <button  type="submit" class="btn">Login to account</button><br>
+    if
+	$_SESSION['emplogin'] = $_POST['username'];
+	echo "
+	<script type='text/javascript'> document.location = 'emp-changepassword.php';</script>";
+	}
  <!--<button  type="submit" class="btn">Sign up for account</button><br>--> 
 
 	<a type="submit" class="supbtn" href="signup.html"><button>sign up for accounts</button></a><br>
@@ -30,5 +35,17 @@
 
 <!-- Initialize Firebase -->
 <script src="/__/firebase/init.js"></script>
+<script>
+    firebase.auth().signInWithEmailAndPassword(email, password)
+		.then((userCredential) => {
+			//signed in 
+			var user = userCredential.user;
+			//..
+		}
+		)
+		.catch((error)=={
+	       // loging again
+		});
+</script>
 </body>
 </html>
